@@ -1,0 +1,150 @@
+.header {
+	background-image: url('/images/desktop-image-hero-1.jpg');
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+
+	@media screen and (max-width: 37.5em) {
+		background-image: url('/images/mobile-image-hero-1.jpg');
+		background-position: bottom;
+	}
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 6rem;
+	left: 6rem;
+
+	@media screen and (max-width: $mobile-lg) {
+		width: 100%;
+	}
+
+	&__menu {
+		display: none;
+
+		@media screen and (max-width: $mobile-lg) {
+			display: inline-block;
+		}
+	}
+
+	&__logo {
+		margin-right: 5rem;
+		height: 2rem;
+
+		@media screen and (max-width: $mobile-lg) {
+			margin-right: 0;
+			margin-left: 25%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		gap: 3rem;
+		color: var(--White);
+		font-weight: 500;
+		font-size: 2rem;
+
+		@media screen and (max-width: $mobile-lg) {
+			display: none;
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		&:hover::after {
+			content: '';
+			position: absolute;
+			width: 2rem;
+			height: 2px;
+			background-color: var(--White);
+			bottom: -4px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+////////////////////////////////////
+/// BUTTON
+
+.btn-inline {
+	border: none;
+	background-color: transparent;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	cursor: pointer;
+	transition: all 0.2s;
+	display: flex;
+	align-items: center;
+
+	& span {
+		margin-left: 5px;
+
+		img {
+			width: 2.2rem;
+		}
+	}
+
+	&:hover {
+		filter: invert(67%) sepia(10%) saturate(15%) hue-rotate(317deg)
+			brightness(89%) contrast(90%);
+	}
+}
+
+////////////////////////////////////
+/// SLIDER
+.slider-box {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	@media screen and (max-width: $tablet) {
+		position: absolute;
+		left: auto;
+		right: 0;
+		bottom: 0;
+	}
+
+	.slider {
+		border: none;
+		background-color: var(--Black);
+		padding: 1.5rem 2rem;
+		cursor: pointer;
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: var(--Very-Dark-Gray);
+		}
+
+		img {
+			height: 1.75rem;
+		}
+
+		&__right {
+			margin-left: -0.5rem;
+		}
+	}
+}
+
+.attribution {
+	padding: 3rem;
+	text-align: center;
+	background-color: var(--Dark-Gray);
+	color: white;
+
+	a {
+		color: var(--Very-Dark-Gray);
+		transition: color 0.2s;
+
+		&:hover {
+			color: white;
+		}
+	}
+}
